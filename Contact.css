@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 5%; /* Responsive padding */
+    background-color: #000000;
+    color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo img {
+    max-width: 200px; /* Reduced size of the logo */
+}
+
+/* Centered Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    margin: 0 30px; /* Reduced margin between links */
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem; /* Reduced font size */
+}
+
+.nav-links li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #00a945;
+    transition: width 0.6s ease, left 0.6s ease;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar {
+    opacity: 0.9;
+    transition: opacity 0.5s;
+}
+
+/* Contact Page Layout */
+.contact-page {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between form and image */
+    align-items: flex-start; /* Align items at the top */
+    margin: 0 5%; /* Margin on the sides */
+    height: 100vh; /* Full viewport height */
+}
+
+.contact-container {
+    background-color: #000000; /* Black background */
+    color: #f4f4f4; /* White text */
+    padding: 40px; /* Increased padding for more space */
+    border-radius: 5px;
+    max-width: 500px; /* Maximum width of the form */
+    margin: 0% 5% 20% auto; /* Center the form vertically and move it right */
+    margin-left: 5%;
+}
+
+.contact-container h1 {
+    font-size: 3rem; /* Increased font size for the header */
+    text-align: center;
+}
+
+.contact-container label {
+    margin-top: 20px; /* Increased space above labels */
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%; /* Full width for inputs */
+    margin-bottom: 2px; /* Increased space below inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: none; /* Remove border */
+    border-bottom: 2px solid #00a945; /* Add bottom border in green color */
+    border-radius: 0; /* Remove rounded corners for a flat look */
+    background: transparent; /* Remove background color */
+    color: #f4f4f4; /* Keep text color white for contrast */
+    font-size: 1.2rem; /* Increased font size for inputs */
+}
+
+.contact-container textarea {
+    resize: none; /* Prevent textarea resizing */
+    min-height: 100px; /* Set a minimum height for the textarea */
+}
+
+.contact-container button {
+    width: 100%; /* Full width for button */
+    padding: 15px; /* Increased padding for button */
+    background: #00a945; /* Button color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    color: white; /* White text */
+    font-size: 1.2rem; /* Increased font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Transition for hover effect */
+}
+
+.contact-container button:hover {
+    background: #00a945; /* Darker button color on hover */
+}
+
+.image-container {
+    flex: 1; /* Allow the image container to grow */
+    margin-left: 0%; /* Space between form and image */
+    display: flex; /* Use flexbox for image alignment */
+    justify-content: flex-end; /* Align image to the right */
+}
+
+.image-container img {
+    width: 100%; /* Make the image take full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 1300px; /* Set a maximum width for the image */
+}
+
+.map-container {
+    margin: 10px 5%; /* Reduce top margin to move the map higher */
+    display: flex;
+    justify-content: center; /* Center the map */
+    align-items: center; /* Center the map vertically */
+}
+
+.map-container iframe {
+    max-width: 100%; /* Make the map responsive */
+    height: 450px; /* Set a fixed height for the iframe */
+}
+
+
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
+    color: white;
+    text-align: left; /* Align text to the left */
+    padding: 20px 60% 20px 0; /* Remove left padding */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Footer Content */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    padding-left: 5%; /* Ensure content stays aligned left */
+}
+
+/* Social Links */
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin-top: 10px;
+}
+
+.social-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+/* Social Link Styling */
+.social-links a {
+    color: #ffffff; /* Purple color */
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+}
+
+/* Hover Effect - Line */
+.social-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #00a945;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.social-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Optional Hover Underline */
+.social-links a:hover {
+    text-decoration: underline;
+}
+

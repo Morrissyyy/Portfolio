@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 5%; /* Responsive padding */
+    background-color: #000000;
+    color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo img {
+    max-width: 200px; /* Reduced size of the logo */
+}
+
+/* Centered Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    margin: 0 30px; /* Reduced margin between links */
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem; /* Reduced font size */
+}
+
+.nav-links li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #ff00fa;
+    transition: width 0.6s ease, left 0.6s ease;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar:hover {
+    opacity: 1;
+}
+
+.navbar {
+    opacity: 0.9;
+    transition: opacity 0.5s;
+}
+
+/* Container with text and img */
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 10% 5%; /* Responsive margin */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.content {
+    flex: 1;
+    margin-right: 20%; /* Adjust margin */
+    padding-left: 5%; /* Use percentage for padding */
+    max-width: 700px;
+    transform: translateX(-100%);
+    animation: slideIn 0.5s forwards;
+    margin-top: 0px; /* Adjust this value to move closer to the navbar */
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.image-container {
+    flex: 1; /* Allow the image container to grow */
+    margin-right: 5%; /* Adjust margin */
+    margin-top: 0px; /* Add space above the image */
+}
+
+.image-container img {
+    width: 100%; /* Make the image take full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Set a smaller maximum width */
+    transition: transform 0.3s; /* Smooth transition */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Scale the image on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .image-container {
+        margin-right: 0; /* Remove right margin on smaller screens */
+        margin-top: -10px; /* Add space above the image on small screens */
+    }
+
+    .image-container img {
+        width: 100%; /* Ensure the image takes full width */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 80%; /* Optionally, make it smaller on smaller screens */
+    }
+}
+
+
+h1 {
+    font-size: 2.5rem; /* Responsive font size */
+    text-align: center;
+    margin: 0;
+}
+
+p {
+    font-size: 1.25rem; /* Responsive font size */
+    margin: 0;
+}
+
+/* Skills graph */
+.skill {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f4f4f4;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.skill-bar {
+    height: 14px;
+    background: #4e4e4e;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.skill-bar:hover {
+    transform: scale(1.05);
+}
+
+.skill-per {
+    height: 14px;
+    background: #ff00fa;
+    border-radius: 4px;
+    position: relative;
+    /* animation: fillBars 2.5s 1; */
+}
+
+.skill-per::before {
+    content: attr(data-per);
+    position: absolute;
+    padding: 4px 6px;
+    background: #000000;
+    border-radius: 4px;
+    font-size: 12px;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+}
+
+.skill-per::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background: #f4f4f4;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    z-index: -1;
+}
+
+@keyframes fillBars {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Class to trigger the animation */
+.fill-animation {
+    animation: fillBars 2.5s forwards; /* Use forwards to keep the end state */
+}
+
+.experience-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 0; /* Remove left margin to center the container */
+    margin-right: 5%; /* Optional: Add a little space on the right */
+    margin-bottom: 400px;
+}
+
+.experience-container.animate .skill-per{
+    animation: fillBars 2.5s 1;
+}
+
+.combined-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0; /* Remove margin for alignment */
+}
+
+.skills {
+    flex: 1;
+    margin-right: 400px;
+    margin-left: 120px;
+}
+
+.experience {
+    flex: 1;
+    max-width: 1000px;
+    padding-left: 0;
+    margin: 0; /* Remove left margin */
+    margin-left: 20 0px;
+}
+
+/* Position Skills on the left and Experience on the right */
+.combined-section {
+    flex-direction: row;
+}
+
+/* Optional: Responsive Design */
+@media (max-width: 768px) {
+    .combined-section {
+        flex-direction: column; /* Stack sections vertically */
+    }
+    .skills, .experience {
+        margin: 0; /* Remove margins on small screens */
+        margin-bottom: 20px; /* Space between stacked sections */
+    }
+    .container {
+        margin: 10% 2%; /* Adjust margin for the container */
+    }
+    .navbar {
+        flex-direction: column; /* Stack navbar items */
+        padding: 5%; /* Responsive padding */
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
+    color: white;
+    text-align: left; /* Align text to the left */
+    padding: 20px 60% 20px 0; /* Remove left padding */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Footer Content */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    padding-left: 5%; /* Ensure content stays aligned left */
+}
+
+/* Social Links */
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin-top: 10px;
+}
+
+.social-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+/* Social Link Styling */
+.social-links a {
+    color: #ffffff; /* Purple color */
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+}
+
+/* Hover Effect - Line */
+.social-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #ff00fa;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.social-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Optional Hover Underline */
+.social-links a:hover {
+    text-decoration: underline;
+}
